@@ -17,8 +17,6 @@ class Post extends BaseEntity
 
     protected string $category;
 
-    protected TagsCollection $tags;
-
     protected array $content;
 
     protected string $description;
@@ -45,11 +43,10 @@ class Post extends BaseEntity
         $this->category = $category;
         $this->description = $description;
         $this->keywords = $keywords;
-        $this->tags = new TagsCollection($tags);
         $this->content = $content ?? [];
     }
 
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'id' => $this->id,
@@ -61,7 +58,6 @@ class Post extends BaseEntity
             'category' => $this->category,
             'description' => $this->description,
             'keywords' => $this->keywords,
-            'tags' => $this->tags->toArray(),
             'content' => $this->content,
         ];
     }
@@ -81,16 +77,6 @@ class Post extends BaseEntity
         }
 
         $this->content[] = ['type' => ContentType::PICTURES, 'pictures' => $pictures];
-    }
-
-    public function addTag(Tag $tag): void
-    {
-        $this->tags->add($tag);
-    }
-
-    public function removeTag(Tag $tag): void
-    {
-        $this->tags->remove($tag);
     }
 
     protected function getSlug(): string
@@ -115,7 +101,7 @@ class Post extends BaseEntity
             return '';
         }
 
-        if ($this->type === 'blog') {
+        if ($this->type === 'BLOG') {
             return $this->date->format('Y-m');
         }
 
