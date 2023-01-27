@@ -1,5 +1,4 @@
-controllers:
-    resource:
-        path: ../src/Core/Infrastructure/Controller/
-        namespace: App\Core\Infrastructure\Controller
-    type: attribute
+api_create_post:
+    path: /api/post
+    methods: POST
+    controller: App\Blog\Infrastructure\Controllers\Api\CreatePostController
