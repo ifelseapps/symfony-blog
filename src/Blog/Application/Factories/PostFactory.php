@@ -4,9 +4,7 @@ namespace App\Blog\Application\Factories;
 
 use App\Blog\Application\Gateways\CategoryRepositoryInterface;
 use App\Blog\Application\Interactors\CreatePostInputDto;
-use App\Blog\Infrastructure\Entities\Category;
 use App\Blog\Infrastructure\Entities\Post;
-use Symfony\Component\Uid\Uuid;
 
 class PostFactory
 {

@@ -25,3 +25,4 @@ services:
 
     App\Blog\Application\Gateways\PostRepositoryInterface: '@App\Blog\Infrastructure\Repositories\PostRepository'
     App\Blog\Application\Gateways\CategoryRepositoryInterface: '@App\Blog\Infrastructure\Repositories\CategoryRepository'
+    App\Blog\Application\Gateways\TagRepositoryInterface: '@App\Blog\Infrastructure\Repositories\TagRepository'

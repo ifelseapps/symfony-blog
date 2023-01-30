@@ -2,7 +2,13 @@ api_create_post:
     path: /api/post
     methods: POST
     controller: App\Blog\Infrastructure\Controllers\Api\CreatePostController
+
 api_get_posts:
     path: /api/post
     methods: GET
     controller: App\Blog\Infrastructure\Controllers\Api\GetPostsController
+
+api_create_tag:
+    path: /api/tag
+    methods: POST
+    controller: App\Blog\Infrastructure\Controllers\Api\CreateTagController
