@@ -65,7 +65,6 @@ class CategoryRepository extends ServiceEntityRepository implements CategoryRepo
             ->andWhere('c.id = :id')
             ->setParameter('id', $id)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getOneOrNullResult();
     }
 }

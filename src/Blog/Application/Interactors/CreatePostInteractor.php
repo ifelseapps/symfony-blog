@@ -7,17 +7,11 @@ use App\Blog\Application\Gateways\PostRepositoryInterface;
 
 class CreatePostInteractor
 {
-    protected PostRepositoryInterface $postRepository;
-
-    protected PostFactory $postFactory;
-
     public function __construct(
-        PostRepositoryInterface $postRepository,
-        PostFactory $postFactory,
+        protected PostRepositoryInterface $postRepository,
+        protected PostFactory $postFactory,
     )
     {
-        $this->postRepository = $postRepository;
-        $this->postFactory = $postFactory;
     }
     public function execute(CreatePostInputDto $input): CreatePostOutputDto
     {
