@@ -3,6 +3,7 @@
 namespace App\Blog\Infrastructure\Repositories;
 
 use App\Blog\Application\Gateways\PostRepositoryInterface;
+use App\Blog\Application\Interactors\GetPostInputDto;
 use App\Blog\Infrastructure\Entities\Post;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -40,20 +41,19 @@ class PostRepository extends ServiceEntityRepository implements PostRepositoryIn
         }
     }
 
-//    /**
-//     * @return Post[] Returns an array of Post objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('p.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    /**
+     * @return Post[] Returns an array of Post objects
+     */
+    public function getAll(GetPostInputDto $input): array
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.id', 'DESC')
+            ->setFirstResult($input->perPage * $input->page)
+            ->setMaxResults($input->perPage)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
 //    public function findOneBySomeField($value): ?Post
 //    {
