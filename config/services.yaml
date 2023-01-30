@@ -24,3 +24,4 @@ services:
     # please note that last definitions always *replace* previous ones
 
     App\Blog\Application\Gateways\PostRepositoryInterface: '@App\Blog\Infrastructure\Repositories\PostRepository'
+    App\Blog\Application\Gateways\CategoryRepositoryInterface: '@App\Blog\Infrastructure\Repositories\CategoryRepository'

@@ -2,12 +2,18 @@
 
 namespace App\Blog\Application\Factories;
 
+use App\Blog\Application\Gateways\CategoryRepositoryInterface;
 use App\Blog\Application\Interactors\CreatePostInputDto;
 use App\Blog\Infrastructure\Entities\Category;
 use App\Blog\Infrastructure\Entities\Post;
+use Symfony\Component\Uid\Uuid;
 
 class PostFactory
 {
+    public function __construct(protected CategoryRepositoryInterface $categoryRepository)
+    {
+    }
+
     public function create(CreatePostInputDto $input): Post
     {
         $post = new Post();
@@ -18,7 +24,8 @@ class PostFactory
         $post->setDescription($input->description);
         $post->setKeywords($input->keywords);
 
-//        $post->setCategory($input->category);
+        $category = $this->categoryRepository->findById($input->category);
+        $post->setCategory($category);
 
         $post->setEnabled($input->enabled);
 

@@ -22,10 +22,10 @@ class CreatePostInteractor
     public function execute(CreatePostInputDto $input): CreatePostOutputDto
     {
         $post = $this->postFactory->create($input);
-//        $this->postRepository->save($post, true);
+        $this->postRepository->save($post, true);
 
         $output = new CreatePostOutputDto();
-        $output->id = 123;
+        $output->id = $post->getId();
 
         return $output;
     }
