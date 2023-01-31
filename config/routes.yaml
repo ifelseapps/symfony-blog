@@ -12,3 +12,8 @@ api_create_tag:
     path: /api/tag
     methods: POST
     controller: App\Blog\Infrastructure\Controllers\Api\CreateTagController
+
+api_create_user:
+    path: /api/user
+    methods: POST
+    controller: App\Core\Infrastructure\Controllers\Api\CreateUserController

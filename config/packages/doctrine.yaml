@@ -26,6 +26,11 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Blog/Infrastructure/Entities'
                 prefix: 'App\Blog\Infrastructure\Entities'
                 alias: Tag
+            Core:
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Core/Infrastructure/Entities'
+                prefix: 'App\Core\Infrastructure\Entities'
+                alias: Core
 
 when@test:
     doctrine:
