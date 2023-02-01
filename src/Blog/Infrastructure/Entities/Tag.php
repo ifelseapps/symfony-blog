@@ -18,7 +18,7 @@ class Tag
     #[ORM\CustomIdGenerator(class: 'doctrine.uuid_generator')]
     private string $id;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, unique: true)]
     private ?string $title = null;
 
     #[ORM\ManyToMany(targetEntity: Post::class, mappedBy: 'tags')]

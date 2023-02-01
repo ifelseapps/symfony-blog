@@ -18,7 +18,7 @@ class Post
     #[ORM\CustomIdGenerator(class: 'doctrine.uuid_generator')]
     private string $id;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, unique: true)]
     private ?string $slug = null;
 
     #[ORM\Column(length: 255)]

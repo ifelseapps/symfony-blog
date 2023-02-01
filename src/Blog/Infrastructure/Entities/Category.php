@@ -31,7 +31,7 @@ class Category
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $preview_text = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, unique: true)]
     private ?string $slug = null;
 
     #[ORM\OneToMany(mappedBy: 'category', targetEntity: Post::class)]
