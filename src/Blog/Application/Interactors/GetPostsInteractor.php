@@ -8,13 +8,21 @@ use App\Blog\Infrastructure\Entities\Tag;
 
 class GetPostsInteractor
 {
+    /** @var Post[] */
+    public array $posts;
+
     public function __construct(protected PostRepositoryInterface $postRepository)
     {
     }
 
     public function execute(GetPostsInputDto $input): GetPostsOutputDto
     {
-        $posts = $this->postRepository->getAll(page: $input->page, perPage: $input->perPage);
+        $this->posts = $this->postRepository->getAll(page: $input->page, perPage: $input->perPage);
+        return $this->createResult();
+    }
+
+    public function createResult(): GetPostsOutputDto
+    {
         $output = new GetPostsOutputDto();
         $output->success = true;
         $output->posts = array_map(function (Post $post) {
@@ -47,7 +55,7 @@ class GetPostsInteractor
             }, $post->getTags()->toArray());
 
             return $postDto;
-        }, $posts);
+        }, $this->posts);
 
         return $output;
     }
