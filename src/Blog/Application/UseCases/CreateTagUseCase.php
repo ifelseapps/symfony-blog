@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Blog\Application\Interactors;
+namespace App\Blog\Application\UseCases;
 
 use App\Blog\Application\Gateways\TagRepositoryInterface;
+use App\Blog\Application\UseCases\Dto\CreateTagInputDto;
+use App\Blog\Application\UseCases\Dto\CreateTagOutputDto;
 use App\Blog\Infrastructure\Entities\Tag;
 
-class CreateTagInteractor
+class CreateTagUseCase
 {
     public function __construct(protected TagRepositoryInterface $tagRepository)
     {

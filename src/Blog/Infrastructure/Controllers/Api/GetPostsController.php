@@ -2,17 +2,14 @@
 
 namespace App\Blog\Infrastructure\Controllers\Api;
 
-use App\Blog\Application\Interactors\GetPostsInputDto;
-use App\Blog\Application\Interactors\GetPostsInteractor;
+use App\Blog\Application\UseCases\Dto\GetPostsInputDto;
+use App\Blog\Application\UseCases\GetPostsUseCase;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 class GetPostsController extends AbstractController
 {
-    public function __construct(protected GetPostsInteractor $interactor)
+    public function __construct(protected GetPostsUseCase $interactor)
     {
     }
 

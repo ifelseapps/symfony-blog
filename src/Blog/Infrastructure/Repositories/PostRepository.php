@@ -3,7 +3,6 @@
 namespace App\Blog\Infrastructure\Repositories;
 
 use App\Blog\Application\Gateways\PostRepositoryInterface;
-use App\Blog\Application\Interactors\GetPostsInputDto;
 use App\Blog\Infrastructure\Entities\Post;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;

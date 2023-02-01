@@ -2,7 +2,6 @@
 
 namespace App\Blog\Application\Gateways;
 
-use App\Blog\Application\Interactors\GetPostsInputDto;
 use App\Blog\Infrastructure\Entities\Post;
 
 interface PostRepositoryInterface

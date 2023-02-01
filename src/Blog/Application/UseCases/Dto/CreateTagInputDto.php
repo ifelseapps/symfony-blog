@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Blog\Application\Interactors;
+namespace App\Blog\Application\UseCases\Dto;
 
 use Symfony\Component\HttpFoundation\Request;
 

@@ -1,8 +1,6 @@
 <?php
 
-namespace App\Blog\Application\Interactors;
-
-use DateTimeImmutable;
+namespace App\Blog\Application\UseCases\Dto;
 
 class PostItemDto
 {

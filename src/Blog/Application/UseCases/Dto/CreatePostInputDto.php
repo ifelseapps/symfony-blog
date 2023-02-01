@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Blog\Application\Interactors;
+namespace App\Blog\Application\UseCases\Dto;
 
 use DateTimeImmutable;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Uid\Uuid;
 
 class CreatePostInputDto
 {

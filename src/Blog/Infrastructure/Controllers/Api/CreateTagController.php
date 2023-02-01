@@ -2,8 +2,8 @@
 
 namespace App\Blog\Infrastructure\Controllers\Api;
 
-use App\Blog\Application\Interactors\CreateTagInputDto;
-use App\Blog\Application\Interactors\CreateTagInteractor;
+use App\Blog\Application\UseCases\CreateTagUseCase;
+use App\Blog\Application\UseCases\Dto\CreateTagInputDto;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CreateTagController extends AbstractController
 {
-    public function __construct(protected CreateTagInteractor $interactor)
+    public function __construct(protected CreateTagUseCase $interactor)
     {
     }
 

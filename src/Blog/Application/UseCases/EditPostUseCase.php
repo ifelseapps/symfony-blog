@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Blog\Application\Interactors;
+namespace App\Blog\Application\UseCases;
 
 use App\Blog\Application\Factories\PostFactory;
 use App\Blog\Application\Gateways\PostRepositoryInterface;
+use App\Blog\Application\UseCases\Dto\EditPostInputDto;
+use App\Blog\Application\UseCases\Dto\EditPostOutputDto;
 
-class EditPostInteractor
+class EditPostUseCase
 {
     public function __construct(
         protected PostFactory $postFactory,

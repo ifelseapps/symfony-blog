@@ -1,12 +1,17 @@
 <?php
 
-namespace App\Blog\Application\Interactors;
+namespace App\Blog\Application\UseCases;
 
 use App\Blog\Application\Gateways\PostRepositoryInterface;
+use App\Blog\Application\UseCases\Dto\CategoryDto;
+use App\Blog\Application\UseCases\Dto\GetPostsInputDto;
+use App\Blog\Application\UseCases\Dto\GetPostsOutputDto;
+use App\Blog\Application\UseCases\Dto\PostItemDto;
+use App\Blog\Application\UseCases\Dto\TagItemDto;
 use App\Blog\Infrastructure\Entities\Post;
 use App\Blog\Infrastructure\Entities\Tag;
 
-class GetPostsInteractor
+class GetPostsUseCase
 {
     /** @var Post[] */
     public array $posts;

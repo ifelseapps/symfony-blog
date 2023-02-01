@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Blog\Application\Interactors;
+namespace App\Blog\Application\UseCases;
 
 use App\Blog\Application\Factories\PostFactory;
 use App\Blog\Application\Gateways\PostRepositoryInterface;
+use App\Blog\Application\UseCases\Dto\CreatePostInputDto;
+use App\Blog\Application\UseCases\Dto\CreatePostOutputDto;
 
-class CreatePostInteractor
+class CreatePostUseCase
 {
     public function __construct(
         protected PostRepositoryInterface $postRepository,
