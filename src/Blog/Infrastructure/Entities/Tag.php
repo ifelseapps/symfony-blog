@@ -16,7 +16,7 @@ class Tag
     #[ORM\Column(type: UuidType::NAME, unique: true)]
     #[ORM\GeneratedValue(strategy: 'CUSTOM')]
     #[ORM\CustomIdGenerator(class: 'doctrine.uuid_generator')]
-    private Uuid $id;
+    private string $id;
 
     #[ORM\Column(length: 255)]
     private ?string $title = null;
@@ -29,12 +29,12 @@ class Tag
         $this->posts = new ArrayCollection();
     }
 
-    public function getId(): ?Uuid
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    public function setId(Uuid $id): self
+    public function setId(string $id): self
     {
         $this->id = $id;
 

@@ -2,7 +2,7 @@
 
 namespace App\Blog\Infrastructure\Controllers\Api;
 
-use App\Blog\Application\Interactors\GetPostInputDto;
+use App\Blog\Application\Interactors\GetPostsInputDto;
 use App\Blog\Application\Interactors\GetPostsInteractor;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -18,11 +18,8 @@ class GetPostsController extends AbstractController
 
     public function __invoke(): JsonResponse
     {
-        $posts = $this->interactor->execute(new GetPostInputDto());
-        return $this->json(['posts' => $posts], Response::HTTP_OK, [], [
-            AbstractNormalizer::CIRCULAR_REFERENCE_HANDLER => function (object $obj) {
-                return $obj->getId();
-            }
-        ]);
+        // TODO: Добавить пагинацию
+        $result = $this->interactor->execute(new GetPostsInputDto());
+        return $this->json($result);
     }
 }

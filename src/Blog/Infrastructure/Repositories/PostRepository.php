@@ -3,7 +3,7 @@
 namespace App\Blog\Infrastructure\Repositories;
 
 use App\Blog\Application\Gateways\PostRepositoryInterface;
-use App\Blog\Application\Interactors\GetPostInputDto;
+use App\Blog\Application\Interactors\GetPostsInputDto;
 use App\Blog\Infrastructure\Entities\Post;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
@@ -45,12 +45,12 @@ class PostRepository extends ServiceEntityRepository implements PostRepositoryIn
     /**
      * @return Post[] Returns an array of Post objects
      */
-    public function getAll(GetPostInputDto $input): array
+    public function getAll(?int $page = null, ?int $perPage = null): array
     {
         return $this->createQueryBuilder('p')
             ->orderBy('p.id', 'DESC')
-            ->setFirstResult($input->perPage * $input->page)
-            ->setMaxResults($input->perPage)
+            ->setFirstResult($perPage * $page)
+            ->setMaxResults($perPage)
             ->getQuery()
             ->getResult()
         ;

@@ -2,7 +2,7 @@
 
 namespace App\Blog\Application\Interactors;
 
-class GetPostInputDto
+class GetPostsInputDto
 {
     public ?int $page = null;
 

@@ -4,7 +4,6 @@ namespace App\Blog\Application\Interactors;
 
 use App\Blog\Application\Factories\PostFactory;
 use App\Blog\Application\Gateways\PostRepositoryInterface;
-use App\Core\Exceptions\NotFoundException;
 
 class EditPostInteractor
 {
