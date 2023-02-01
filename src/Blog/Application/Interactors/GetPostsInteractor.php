@@ -16,6 +16,7 @@ class GetPostsInteractor
     {
         $posts = $this->postRepository->getAll(page: $input->page, perPage: $input->perPage);
         $output = new GetPostsOutputDto();
+        $output->success = true;
         $output->posts = array_map(function (Post $post) {
             $postDto = new PostItemDto();
             $postDto->id = $post->getId();
