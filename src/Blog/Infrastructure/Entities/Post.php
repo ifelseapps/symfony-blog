@@ -154,6 +154,11 @@ class Post
         return $this->tags;
     }
 
+    public function hasTag(Tag $tag): bool
+    {
+        return $this->tags->contains($tag);
+    }
+
     public function addTag(Tag $tag): self
     {
         if (!$this->tags->contains($tag)) {

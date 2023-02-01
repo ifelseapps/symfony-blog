@@ -5,6 +5,7 @@ namespace App\Blog\Infrastructure\Repositories;
 use App\Blog\Application\Gateways\TagRepositoryInterface;
 use App\Blog\Infrastructure\Entities\Tag;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -12,7 +13,6 @@ use Doctrine\Persistence\ManagerRegistry;
  *
  * @method Tag|null find($id, $lockMode = null, $lockVersion = null)
  * @method Tag|null findOneBy(array $criteria, array $orderBy = null)
- * @method Tag[]    findAll()
  * @method Tag[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class TagRepository extends ServiceEntityRepository implements TagRepositoryInterface
@@ -38,6 +38,29 @@ class TagRepository extends ServiceEntityRepository implements TagRepositoryInte
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    /**
+     * @throws NonUniqueResultException
+     */
+    public function findById(string $id): ?Tag
+    {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
+    /**
+     * @return Tag[] Returns an array of Tag objects
+     */
+    public function findAll(): array
+    {
+        return $this->createQueryBuilder('t')
+            ->orderBy('t.id', 'ASC')
+            ->getQuery()
+            ->getResult();
     }
 
 //    /**

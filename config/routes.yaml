@@ -3,6 +3,11 @@ api_create_post:
     methods: POST
     controller: App\Blog\Infrastructure\Controllers\Api\CreatePostController
 
+api_edit_post:
+    path: /api/post
+    methods: PATCH
+    controller: App\Blog\Infrastructure\Controllers\Api\EditPostController
+
 api_get_posts:
     path: /api/post
     methods: GET

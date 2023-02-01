@@ -6,6 +6,7 @@ use App\Blog\Application\Gateways\PostRepositoryInterface;
 use App\Blog\Application\Interactors\GetPostInputDto;
 use App\Blog\Infrastructure\Entities\Post;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -53,6 +54,18 @@ class PostRepository extends ServiceEntityRepository implements PostRepositoryIn
             ->getQuery()
             ->getResult()
         ;
+    }
+
+    /**
+     * @throws NonUniqueResultException
+     */
+    public function findById(string $id): ?Post
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getOneOrNullResult();
     }
 
 //    public function findOneBySomeField($value): ?Post

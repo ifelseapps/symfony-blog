@@ -10,4 +10,6 @@ interface PostRepositoryInterface
     public function save(Post $entity, bool $flush): void;
 
     public function getAll(GetPostInputDto $input): array;
+
+    public function findById(string $id): ?Post;
 }
