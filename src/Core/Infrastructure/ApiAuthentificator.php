@@ -21,7 +21,7 @@ class ApiAuthentificator extends AbstractAuthenticator
     {
     }
 
-    const HEADER = 'X-AUTH-TOKEN';
+    const HEADER = 'Authorization';
 
     public function supports(Request $request): ?bool
     {
@@ -30,8 +30,9 @@ class ApiAuthentificator extends AbstractAuthenticator
 
     public function authenticate(Request $request): Passport
     {
-        $token = $request->headers->get(static::HEADER);
-        if (null === $token) {
+        // Откусим "Bearer "
+        $token = substr($request->headers->get(static::HEADER), 7);
+        if (!$token) {
             throw new CustomUserMessageAuthenticationException('No API token provided');
         }
 
