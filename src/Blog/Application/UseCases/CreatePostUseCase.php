@@ -21,6 +21,7 @@ class CreatePostUseCase
         $this->postRepository->save($post, true);
 
         $output = new CreatePostOutputDto();
+        $output->success = true;
         $output->id = $post->getId();
 
         return $output;

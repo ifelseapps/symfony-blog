@@ -21,6 +21,7 @@ class CreateTagUseCase
         $this->tagRepository->save($tag, true);
 
         $output = new CreateTagOutputDto();
+        $output->success = true;
         $output->id = $tag->getId();
 
         return $output;

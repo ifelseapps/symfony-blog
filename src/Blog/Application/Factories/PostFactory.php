@@ -21,6 +21,9 @@ class PostFactory
     {
     }
 
+    /**
+     * @throws NotFoundException
+     */
     public function create(CreatePostInputDto $input): Post
     {
         $post = new Post();
@@ -32,13 +35,19 @@ class PostFactory
         $post->setKeywords($input->keywords);
 
         $category = $this->categoryRepository->findById($input->category);
-        $post->setCategory($category);
+        if (null === $category) {
+            throw new NotFoundException('Category not found');
+        }
 
+        $post->setCategory($category);
         $post->setEnabled($input->enabled);
 
         return $post;
     }
 
+    /**
+     * @throws NotFoundException
+     */
     public function edit(EditPostInputDto $input): Post
     {
         $post = $this->postRepository->findById($input->id);

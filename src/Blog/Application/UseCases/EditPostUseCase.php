@@ -22,6 +22,7 @@ class EditPostUseCase
         $this->postRepository->save($post, true);
 
         $output = new EditPostOutputDto();
+        $output->success = true;
         $output->id = $post->getId();
 
         return $output;

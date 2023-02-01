@@ -9,5 +9,5 @@ class GetPostsOutputDto
     /** @var PostItemDto[] */
     public array $posts;
 
-    public string $error;
+    public ErrorDto $error;
 }
