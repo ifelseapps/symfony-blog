@@ -2,20 +2,17 @@
 
 namespace App\Blog\Application\UseCases\Dto;
 
-use Exception;
+use Throwable;
 
 class ErrorDto
 {
-    public int $code;
-
     public string $message;
 
     public string $class;
 
-    public static function createFromException(Exception $exception): self
+    public static function createFromException(Throwable $exception): self
     {
         $dto = new ErrorDto();
-        $dto->code = $exception->getCode();
         $dto->message = $exception->getMessage();
         $dto->class = get_class($exception);
 

@@ -19,20 +19,15 @@ class CreatePostController extends AbstractController
     {
     }
 
+    /**
+     * @throws Exception
+     */
     public function __invoke(Request $request): JsonResponse
     {
-        try {
-            $input = $this->createInput($request);
-            $result = $this->useCase->execute($input);
+        $input = $this->createInput($request);
+        $result = $this->useCase->execute($input);
 
-            return $this->json($result, Response::HTTP_OK);
-        } catch (Exception $e) {
-            $result = new CreatePostOutputDto();
-            $result->success = false;
-            $result->error = ErrorDto::createFromException($e);
-
-            return $this->json($result, Response::HTTP_BAD_REQUEST);
-        }
+        return $this->json($result, Response::HTTP_OK);
     }
 
     /**

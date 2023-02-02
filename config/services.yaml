@@ -27,3 +27,6 @@ services:
     App\Blog\Application\Gateways\CategoryRepositoryInterface: '@App\Blog\Infrastructure\Repositories\CategoryRepository'
     App\Blog\Application\Gateways\TagRepositoryInterface: '@App\Blog\Infrastructure\Repositories\TagRepository'
     App\Core\Application\Gateways\UserRepositoryInterface: '@App\Core\Infrastructure\Repositories\UserRepository'
+
+    App\Core\Infrastructure\Events\ExceptionEventListener:
+        tags: [ kernel.event_listener ]

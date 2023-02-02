@@ -2,11 +2,7 @@
 
 namespace App\Blog\Application\UseCases\Dto;
 
-class CreatePostOutputDto
+class CreatePostOutputDto extends BaseOutputDto
 {
-    public bool $success;
-
     public string $id;
-
-    public ErrorDto $error;
 }

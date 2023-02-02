@@ -2,12 +2,8 @@
 
 namespace App\Blog\Application\UseCases\Dto;
 
-class GetPostsOutputDto
+class GetPostsOutputDto extends BaseOutputDto
 {
-    public bool $success;
-
     /** @var PostItemDto[] */
     public array $posts;
-
-    public ErrorDto $error;
 }
