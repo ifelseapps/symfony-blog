@@ -4,9 +4,6 @@ namespace App\Blog\Infrastructure\Controllers\Api;
 
 use App\Blog\Application\UseCases\CreateTagUseCase;
 use App\Blog\Application\UseCases\Dto\CreateTagInputDto;
-use App\Blog\Application\UseCases\Dto\CreateTagOutputDto;
-use App\Blog\Application\UseCases\Dto\ErrorDto;
-use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

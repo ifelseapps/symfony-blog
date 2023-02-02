@@ -3,10 +3,7 @@
 namespace App\Blog\Infrastructure\Controllers\Api;
 
 use App\Blog\Application\UseCases\Dto\EditPostInputDto;
-use App\Blog\Application\UseCases\Dto\EditPostOutputDto;
-use App\Blog\Application\UseCases\Dto\ErrorDto;
 use App\Blog\Application\UseCases\EditPostUseCase;
-use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

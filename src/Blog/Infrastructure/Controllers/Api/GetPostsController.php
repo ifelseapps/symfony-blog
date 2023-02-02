@@ -2,11 +2,8 @@
 
 namespace App\Blog\Infrastructure\Controllers\Api;
 
-use App\Blog\Application\UseCases\Dto\ErrorDto;
 use App\Blog\Application\UseCases\Dto\GetPostsInputDto;
-use App\Blog\Application\UseCases\Dto\GetPostsOutputDto;
 use App\Blog\Application\UseCases\GetPostsUseCase;
-use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;

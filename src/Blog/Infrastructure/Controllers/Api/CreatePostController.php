@@ -4,8 +4,6 @@ namespace App\Blog\Infrastructure\Controllers\Api;
 
 use App\Blog\Application\UseCases\CreatePostUseCase;
 use App\Blog\Application\UseCases\Dto\CreatePostInputDto;
-use App\Blog\Application\UseCases\Dto\CreatePostOutputDto;
-use App\Blog\Application\UseCases\Dto\ErrorDto;
 use DateTimeImmutable;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
