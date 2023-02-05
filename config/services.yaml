@@ -28,5 +28,9 @@ services:
     App\Blog\Application\Gateways\TagRepositoryInterface: '@App\Blog\Infrastructure\Repositories\TagRepository'
     App\Core\Application\Gateways\UserRepositoryInterface: '@App\Core\Infrastructure\Repositories\UserRepository'
 
+    App\Core\Infrastructure\Events\ExceptionParametersService:
+        arguments:
+            - "@service_container"
+
     App\Core\Infrastructure\Events\ExceptionEventListener:
         tags: [ kernel.event_listener ]

@@ -1,0 +1,4 @@
+parameters:
+  exceptions:
+    Exception:
+      code: 501
