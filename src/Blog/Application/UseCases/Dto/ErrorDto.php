@@ -8,14 +8,5 @@ class ErrorDto
 {
     public string $message;
 
-    public string $class;
-
-    public static function createFromException(Throwable $exception): self
-    {
-        $dto = new ErrorDto();
-        $dto->message = $exception->getMessage();
-        $dto->class = get_class($exception);
-
-        return $dto;
-    }
+    public ?string $class;
 }

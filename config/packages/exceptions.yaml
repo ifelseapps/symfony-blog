@@ -1,4 +1,10 @@
 parameters:
   exceptions:
+    Doctrine\DBAL\Exception\UniqueConstraintViolationException:
+      code: 400
+      hidden: false
+
+    # Более общие исключения должны быть в конце
     Exception:
-      code: 501
+      code: 500
+      hidden: false

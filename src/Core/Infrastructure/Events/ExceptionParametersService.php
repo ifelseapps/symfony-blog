@@ -6,24 +6,28 @@ use Symfony\Component\DependencyInjection\Container;
 
 class ExceptionParametersService
 {
+    /**
+     * @var array<string, ExceptionParametersDto>
+     */
     protected array $settings = [];
 
     public function __construct(protected Container $container)
     {
         $parameters = $this->container->getParameter('exceptions');
         foreach ($parameters as $class => $settings) {
-            $this->addSetting($class, $settings['code']);
+            $this->addException($class, $settings['code'], $settings['hidden']);
         }
     }
 
-    public function addSetting(string $class, int $code): void {
-        $this->settings[$class] = [
-            'code' => $code,
-        ];
+    public function addException(string $class, int $code, bool $hidden): void {
+        $dto = new ExceptionParametersDto();
+        $dto->code = $code;
+        $dto->hidden = $hidden;
+
+        $this->settings[$class] = $dto;
     }
 
-    /** @todo использовать dto для хранения настроек для поддержки типизации */
-    public function resolve(string $throwableClass): array | null
+    public function resolve(string $throwableClass): ExceptionParametersDto | null
     {
         foreach ($this->settings as $class => $settings) {
             if ($class === $throwableClass || is_subclass_of($throwableClass, $class)) {
