@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Blog\Infrastructure\Entities;
+namespace App\Blog\Domain;
 
 use App\Blog\Infrastructure\Repositories\TagRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Types\UuidType;
-use Symfony\Component\Uid\Uuid;
 
 #[ORM\Entity(repositoryClass: TagRepository::class)]
 class Tag

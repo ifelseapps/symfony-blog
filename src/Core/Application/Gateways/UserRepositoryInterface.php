@@ -2,7 +2,7 @@
 
 namespace App\Core\Application\Gateways;
 
-use App\Core\Infrastructure\Entities\User;
+use App\Core\Domain\User;
 
 interface UserRepositoryInterface
 {

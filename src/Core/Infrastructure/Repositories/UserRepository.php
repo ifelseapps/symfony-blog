@@ -3,7 +3,7 @@
 namespace App\Core\Infrastructure\Repositories;
 
 use App\Core\Application\Gateways\UserRepositoryInterface;
-use App\Core\Infrastructure\Entities\User;
+use App\Core\Domain\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;

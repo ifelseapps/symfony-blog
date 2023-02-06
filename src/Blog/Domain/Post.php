@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Blog\Infrastructure\Entities;
+namespace App\Blog\Domain;
 
 use App\Blog\Infrastructure\Repositories\PostRepository;
 use Doctrine\Common\Collections\ArrayCollection;

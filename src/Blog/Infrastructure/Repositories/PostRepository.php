@@ -3,7 +3,7 @@
 namespace App\Blog\Infrastructure\Repositories;
 
 use App\Blog\Application\Gateways\PostRepositoryInterface;
-use App\Blog\Infrastructure\Entities\Post;
+use App\Blog\Domain\Post;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;

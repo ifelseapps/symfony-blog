@@ -8,8 +8,8 @@ use App\Blog\Application\UseCases\Dto\GetPostsInputDto;
 use App\Blog\Application\UseCases\Dto\GetPostsOutputDto;
 use App\Blog\Application\UseCases\Dto\PostItemDto;
 use App\Blog\Application\UseCases\Dto\TagItemDto;
-use App\Blog\Infrastructure\Entities\Post;
-use App\Blog\Infrastructure\Entities\Tag;
+use App\Blog\Domain\Post;
+use App\Blog\Domain\Tag;
 
 class GetPostsUseCase
 {

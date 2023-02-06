@@ -3,7 +3,7 @@
 namespace App\Blog\Infrastructure\Repositories;
 
 use App\Blog\Application\Gateways\CategoryRepositoryInterface;
-use App\Blog\Infrastructure\Entities\Category;
+use App\Blog\Domain\Category;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;

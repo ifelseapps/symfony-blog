@@ -3,7 +3,7 @@
 namespace App\Blog\Infrastructure\Repositories;
 
 use App\Blog\Application\Gateways\TagRepositoryInterface;
-use App\Blog\Infrastructure\Entities\Tag;
+use App\Blog\Domain\Tag;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;

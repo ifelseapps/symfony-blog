@@ -7,8 +7,8 @@ use App\Blog\Application\Gateways\PostRepositoryInterface;
 use App\Blog\Application\Gateways\TagRepositoryInterface;
 use App\Blog\Application\UseCases\Dto\CreatePostInputDto;
 use App\Blog\Application\UseCases\Dto\EditPostInputDto;
-use App\Blog\Infrastructure\Entities\Post;
-use App\Blog\Infrastructure\Entities\Tag;
+use App\Blog\Domain\Post;
+use App\Blog\Domain\Tag;
 use App\Core\Exceptions\NotFoundException;
 
 class PostFactory

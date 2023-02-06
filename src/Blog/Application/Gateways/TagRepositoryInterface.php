@@ -2,7 +2,7 @@
 
 namespace App\Blog\Application\Gateways;
 
-use App\Blog\Infrastructure\Entities\Tag;
+use App\Blog\Domain\Tag;
 
 interface TagRepositoryInterface
 {

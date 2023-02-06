@@ -2,7 +2,7 @@
 
 namespace App\Blog\Application\Gateways;
 
-use App\Blog\Infrastructure\Entities\Post;
+use App\Blog\Domain\Post;
 
 interface PostRepositoryInterface
 {

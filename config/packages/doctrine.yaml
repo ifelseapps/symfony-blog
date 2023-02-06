@@ -16,20 +16,15 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Entity'
                 prefix: 'App\Entity'
                 alias: App
-            Post:
+            Blog:
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Blog/Infrastructure/Entities'
-                prefix: 'App\Blog\Infrastructure\Entities'
+                dir: '%kernel.project_dir%/src/Blog/Domain'
+                prefix: 'App\Blog\Domain'
                 alias: Blog
-            Tag:
-                is_bundle: false
-                dir: '%kernel.project_dir%/src/Blog/Infrastructure/Entities'
-                prefix: 'App\Blog\Infrastructure\Entities'
-                alias: Tag
             Core:
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Core/Infrastructure/Entities'
-                prefix: 'App\Core\Infrastructure\Entities'
+                dir: '%kernel.project_dir%/src/Core/Domain'
+                prefix: 'App\Core\Domain'
                 alias: Core
 
 when@test:

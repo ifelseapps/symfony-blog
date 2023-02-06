@@ -2,7 +2,7 @@
 
 namespace App\Blog\Application\Gateways;
 
-use App\Blog\Infrastructure\Entities\Category;
+use App\Blog\Domain\Category;
 
 interface CategoryRepositoryInterface
 {

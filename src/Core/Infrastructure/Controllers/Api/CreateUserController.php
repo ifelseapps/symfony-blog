@@ -3,7 +3,7 @@
 namespace App\Core\Infrastructure\Controllers\Api;
 
 use App\Core\Application\Gateways\UserRepositoryInterface;
-use App\Core\Infrastructure\Entities\User;
+use App\Core\Domain\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

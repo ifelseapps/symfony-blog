@@ -5,7 +5,7 @@ namespace App\Blog\Application\UseCases;
 use App\Blog\Application\Gateways\TagRepositoryInterface;
 use App\Blog\Application\UseCases\Dto\CreateTagInputDto;
 use App\Blog\Application\UseCases\Dto\CreateTagOutputDto;
-use App\Blog\Infrastructure\Entities\Tag;
+use App\Blog\Domain\Tag;
 
 class CreateTagUseCase
 {
