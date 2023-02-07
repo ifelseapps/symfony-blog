@@ -23,6 +23,12 @@ api_create_tag:
     methods: POST
     controller: App\Blog\Infrastructure\Controllers\Api\CreateTagController
 
+api_remove_tag:
+    path: /api/tag
+    methods: DELETE
+    controller: App\Blog\Infrastructure\Controllers\Api\RemoveTagController
+
+
 api_create_user:
     path: /api/user
     methods: POST

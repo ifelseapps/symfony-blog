@@ -8,6 +8,8 @@ interface TagRepositoryInterface
 {
     public function save(Tag $entity, bool $flush = false): void;
 
+    public function remove(Tag $entity, bool $flush = false): void;
+
     public function findById(string $id): ?Tag;
 
     public function findAll(): array;
