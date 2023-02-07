@@ -42,7 +42,7 @@ class Post
     #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'posts')]
     private Collection $tags;
 
-    #[ORM\ManyToOne(cascade: ['persist', 'remove'], inversedBy: 'posts')]
+    #[ORM\ManyToOne(cascade: ['persist'], inversedBy: 'posts')]
     private ?Category $category = null;
 
     public function __construct()

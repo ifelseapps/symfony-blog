@@ -8,6 +8,11 @@ api_edit_post:
     methods: PATCH
     controller: App\Blog\Infrastructure\Controllers\Api\EditPostController
 
+api_remove_post:
+    path: /api/post
+    methods: DELETE
+    controller: App\Blog\Infrastructure\Controllers\Api\RemovePostController
+
 api_get_posts:
     path: /api/post
     methods: GET
